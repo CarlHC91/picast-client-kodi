@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+    <category label="Picast Server">
+        <setting id="server_host" type="text" option="writeable" label="Direccion IP" default="http://127.0.0.1:8080"/>
+    </category>
+</settings>
+
+
+
