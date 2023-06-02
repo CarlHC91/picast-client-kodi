@@ -74,7 +74,7 @@ def list_directory(params):
 
 def play_archive(params):
   label = params.get('label')
-  path = server_host + '/archiveDetails/downloadOneById?id_archive=' + params.get('id_archive')
+  path = server_host + '/archiveDetails/downloadOne?id_archive=' + params.get('id_archive')
 
   kod.playVideo(label = label, path = path)
 
