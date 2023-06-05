@@ -11,6 +11,7 @@ kod = kodi.Kodi()
 
 addon = xbmcaddon.Addon()
 server_host = addon.getSetting('server_host')
+api_key = addon.getSetting('api_key')
 
 
 def run():
@@ -30,7 +31,7 @@ def run():
 
 
 def list_directory(params):
-  url = server_host + '/directoryDetails/findAllByParent'
+  url = server_host + '/directoryDetails/findAllByParent?api_key=%s' % (str(api_key))
 
   request_details = {
     'parent_directory': {
@@ -51,7 +52,7 @@ def list_directory(params):
   except Exception as e:
     kod.log(str(e))
 
-  url = server_host + '/archiveDetails/findAllByParent'
+  url = server_host + '/archiveDetails/findAllByParent?api_key=%s' % (str(api_key))
 
   request_details = {
     'parent_directory': {
@@ -73,8 +74,9 @@ def list_directory(params):
 
 
 def play_archive(params):
+  id_archive = params.get('id_archive')
   label = params.get('label')
-  path = server_host + '/archiveDetails/downloadOne?id_archive=' + params.get('id_archive')
+  path = server_host + '/archiveDetails/downloadOne?id_archive=%s&api_key=%s' % (str(id_archive), str(api_key))
 
   kod.playVideo(label = label, path = path)
 
