@@ -2,7 +2,7 @@
 <settings>
     <category label="Picast Server">
         <setting id="server_host" type="text" option="writeable" label="Direccion IP" default=""/>
-        <setting id="api_key" type="text" option="writeable" label="API Key" default=""/>
+        <setting id="token_api" type="text" option="writeable" label="Token API" default=""/>
     </category>
 </settings>
 
